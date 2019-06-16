@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+ 
+	"name": "Dumpert Random",
+	"version": "0.1.0",
+	"description": "Een random dumpert video laatste update 13-06-2019",
+
+	"web_accessible_resources": [
+		"style.css",
+		"lijst.json",
+		"images/*"
+	],
+
+	"icons": {
+		"128": "images/icon.png"
+	},
+
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_title": "Dumpert Random"
+	},
+
+ 
+	"content_scripts": [{
+		"css": ["style.css"],
+		"js": [
+			"jquery.min.js",
+			"dumpert.js"
+		],
+		"matches": ["<all_urls>"],
+		"all_frames": true
+	}]
+}
